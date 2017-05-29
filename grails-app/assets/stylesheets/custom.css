@@ -1,0 +1,21 @@
+h1.greencolor{
+    color:green;
+    font-style:italic;
+}
+h2.greencolor{
+    color:green;
+}
+img.imgsize {
+    width: 80px;
+    height: 80px;
+    margin: 5px;
+    padding: 2px;
+}
+img.iconsize {
+    width: 20px;
+    height: 20px;
+    margin: 1px;
+}
+div.backgroundgrey{
+    background-color: lightgrey;
+}

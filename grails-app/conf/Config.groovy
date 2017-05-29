@@ -1,3 +1,5 @@
+import grails.plugin.springsecurity.SpringSecurityUtils
+
 // locations to search for config files that get merged into the main config;
 // config files can be ConfigSlurper scripts, Java properties files, or classes
 // in the classpath in ConfigSlurper format
@@ -115,3 +117,20 @@ log4j.main = {
            'org.hibernate',
            'net.sf.ehcache.hibernate'
 }
+
+
+// Added by the Spring Security Core plugin:
+grails.plugin.springsecurity.successHandler.defaultTargetUrl='/dashboard/home'
+grails.plugin.springsecurity.userLookup.userDomainClassName = 'com.sharing.link.User'
+grails.plugin.springsecurity.userLookup.authorityJoinClassName = 'com.sharing.link.UserRole'
+grails.plugin.springsecurity.authority.className = 'com.sharing.link.Role'
+grails.plugin.springsecurity.controllerAnnotations.staticRules = [
+	'/':                ['permitAll'],
+	'/create':           ['permitAll'],
+	'/create.gsp':       ['permitAll'],
+	'/assets/**':       ['permitAll'],
+	'/**/js/**':        ['permitAll'],
+	'/**/css/**':       ['permitAll'],
+	'/**/images/**':    ['permitAll'],
+	'/**/favicon.ico':  ['permitAll']
+]
